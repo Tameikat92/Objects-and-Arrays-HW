@@ -93,3 +93,16 @@ function findAverageScore(array){
 }
 let average = findAverageScore(submissions);
 console.log(`The total score of all students is : ${average}`);
+
+
+
+function filterPassing(array){
+  return array.filter(submissions => submissions.passed === true);
+}
+console.log(filterPassing(submissions))
+
+// function filter90AndAbove(array){
+//  return array.filter(submissions => submissions.score >= 90);
+// }
+// console.log(filter90AndAbove(submissions))
+
