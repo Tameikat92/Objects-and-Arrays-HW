@@ -64,17 +64,32 @@ const submissions = [
 let result = findSubmissionByName(submissions,"Jill")
 console.log(result)
 
-function findLowestScore(array){
-let lowestScore = array[0]
-
-array.forEach(
-  function(person){
-    if (person.score < lowestScore){
-    lowestScore = person.score
-  }
 
 
-});
+function findLowestScore(array) {
+  let lowestScore = array[0].score; // Initialize with the first person's score
+
+  array.forEach(function(person) {
+    if (person.score < lowestScore) {
+      lowestScore = person.score;
+    }
+  });
+
+  return lowestScore; 
+}
+
+
+let low = findLowestScore(submissions)
+console.log(low)
+
+function findAverageScore(array){
+  let sum = 0
+  array.forEach((person)=>{
+    sum+=person.score
+
+  });
+  return sum / array.length
 
 }
-findLowestScore()
+let average = findAverageScore(submissions);
+console.log(`The total score of all students is : ${average}`);
